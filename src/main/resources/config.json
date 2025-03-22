@@ -1,0 +1,14 @@
+{
+  "appiumServer": "http://127.0.0.1:4723",
+  "android": {
+    "deviceName": "emulator-5554",
+    "platformName": "Android",
+    "app": "src/main/resources/app/Final_Exam_MacroDroid.apk",
+    "automationName": "UiAutomator2",
+    "noReset": "false",
+    "newCommandTimeout": "300"
+  }
+}
+
+
+
