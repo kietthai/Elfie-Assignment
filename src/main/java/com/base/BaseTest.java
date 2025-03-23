@@ -1,12 +1,17 @@
 package com.base;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.model.Media;
 import com.drivers.DriverManager;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.pages.Marco1.AddAction.AddActionScreen;
+import com.pages.Marco1.AddConstraint.AddConstraintScreen;
+import com.pages.Marco1.AddLocalVariable.AddLocalVariableScreen;
+import com.pages.Marco1.AddTrigger.AddTriggerScreen;
+import com.pages.Dashboard.DashboardScreen;
+import com.pages.Marco1.Dialog.DialogScreen;
+import com.pages.Marco1.Marco.MarcoScreen;
 import com.pages.Onboard.OnboardScreen;
 import com.utils.Logger;
 import com.utils.ReportManager;
@@ -16,8 +21,6 @@ import org.testng.annotations.*;
 
 import java.io.File;
 import java.net.MalformedURLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static com.utils.ReportManager.testThread;
 
@@ -80,6 +83,15 @@ public class BaseTest {
 
     // init Screen
     protected OnboardScreen onboardScreen;
+    protected DashboardScreen dashboardScreen;
+    protected MarcoScreen marcoScreen;
+    protected AddTriggerScreen addTriggerScreen;
+    protected AddActionScreen addActionScreen;
+    protected AddConstraintScreen addConstraintScreen;
+    protected AddLocalVariableScreen addLocalVariableScreen;
+    protected DialogScreen dialogScreen;
+
+
 
     protected OnboardScreen onboardScreen() {
         if (onboardScreen == null) {
@@ -87,4 +99,55 @@ public class BaseTest {
         }
         return onboardScreen;
     }
+
+    protected DashboardScreen dashboardScreen() {
+        if (dashboardScreen == null) {
+            dashboardScreen = new DashboardScreen();
+        }
+        return dashboardScreen;
+    }
+
+    protected MarcoScreen marcoScreen() {
+        if (marcoScreen == null) {
+            marcoScreen = new MarcoScreen();
+        }
+        return marcoScreen;
+    }
+
+    protected AddTriggerScreen addTriggerScreen() {
+        if (addTriggerScreen == null) {
+            addTriggerScreen = new AddTriggerScreen();
+        }
+        return addTriggerScreen;
+    }
+
+    protected DialogScreen dialogScreen() {
+        if (dialogScreen == null) {
+            dialogScreen = new DialogScreen();
+        }
+        return dialogScreen;
+    }
+
+    protected AddActionScreen addActionScreen() {
+        if (addActionScreen == null) {
+            addActionScreen = new AddActionScreen();
+        }
+        return addActionScreen;
+    }
+
+    protected AddConstraintScreen addConstraintScreen() {
+        if (addConstraintScreen == null) {
+            addConstraintScreen = new AddConstraintScreen();
+        }
+        return addConstraintScreen;
+    }
+
+    protected AddLocalVariableScreen addLocalVariableScreen() {
+        if (addLocalVariableScreen == null) {
+            addLocalVariableScreen = new AddLocalVariableScreen();
+        }
+        return addLocalVariableScreen;
+    }
+
+
 }
