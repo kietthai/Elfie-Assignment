@@ -1,4 +1,4 @@
-package com.pages.Marco1.AddTrigger;
+package com.pages.Marco.AddTrigger;
 
 public class AddTriggerConstants {
     // Các locator cho màn hình triggers

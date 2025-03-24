@@ -16,8 +16,8 @@ public class ElementVerification {
             boolean displayed = element.isDisplayed();
             Logger.logInfo("Element [" + value + "] is displayed: " + displayed);
             return displayed;
-        } catch (NoSuchElementException e) {
-            Logger.logError("Element [" + value + "] not found.");
+        } catch (Exception e) {
+            Logger.logInfo("Element [" + value + "] not found.");
             return false;
         }
     }
@@ -28,8 +28,8 @@ public class ElementVerification {
             boolean enabled = element.isEnabled();
             Logger.logInfo("Element [" + value + "] is enabled: " + enabled);
             return enabled;
-        } catch (NoSuchElementException e) {
-            Logger.logError("Element [" + value + "] not found.");
+        } catch (Exception e) {
+            Logger.logInfo("Element [" + value + "] not found.");
             return false;
         }
     }
@@ -40,8 +40,8 @@ public class ElementVerification {
             boolean selected = element.isSelected();
             Logger.logInfo("Element [" + value + "] is selected: " + selected);
             return selected;
-        } catch (NoSuchElementException e) {
-            Logger.logError("Element [" + value + "] not found.");
+        } catch (Exception e) {
+            Logger.logInfo("Element [" + value + "] not found.");
             return false;
         }
     }

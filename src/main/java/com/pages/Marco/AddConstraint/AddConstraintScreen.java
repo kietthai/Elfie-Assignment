@@ -1,6 +1,6 @@
-package com.pages.Marco1.AddConstraint;
+package com.pages.Marco.AddConstraint;
 
-import com.pages.Marco1.AddTrigger.AddTriggerScreen;
+import com.pages.Marco.AddTrigger.AddTriggerScreen;
 
 public class AddConstraintScreen extends AddTriggerScreen {
     public AddConstraintScreen chooseCategory(String category) {

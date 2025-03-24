@@ -1,4 +1,4 @@
-package com.pages.Marco1.AddTrigger;
+package com.pages.Marco.AddTrigger;
 
 import com.action.MobileActions.ClickActions;
 import com.utils.ElementType;

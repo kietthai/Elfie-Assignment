@@ -5,13 +5,14 @@ import com.drivers.DriverManager;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.pages.Marco1.AddAction.AddActionScreen;
-import com.pages.Marco1.AddConstraint.AddConstraintScreen;
-import com.pages.Marco1.AddLocalVariable.AddLocalVariableScreen;
-import com.pages.Marco1.AddTrigger.AddTriggerScreen;
+import com.pages.ActionBlocks.ActionBlock.ActionBlockScreen;
+import com.pages.ActionBlocks.ActionBlockDetail.ActionBlockDetailScreen;
+import com.pages.Marco.AddAction.AddActionScreen;
+import com.pages.Marco.AddConstraint.AddConstraintScreen;
+import com.pages.Marco.AddTrigger.AddTriggerScreen;
 import com.pages.Dashboard.DashboardScreen;
-import com.pages.Marco1.Dialog.DialogScreen;
-import com.pages.Marco1.Marco.MarcoScreen;
+import com.pages.Dialog.DialogScreen;
+import com.pages.Marco.Marco.MarcoScreen;
 import com.pages.Onboard.OnboardScreen;
 import com.utils.Logger;
 import com.utils.ReportManager;
@@ -88,8 +89,9 @@ public class BaseTest {
     protected AddTriggerScreen addTriggerScreen;
     protected AddActionScreen addActionScreen;
     protected AddConstraintScreen addConstraintScreen;
-    protected AddLocalVariableScreen addLocalVariableScreen;
     protected DialogScreen dialogScreen;
+    protected ActionBlockScreen actionBlockScreen;
+    protected ActionBlockDetailScreen actionBlockDetailScreen;
 
 
 
@@ -142,11 +144,17 @@ public class BaseTest {
         return addConstraintScreen;
     }
 
-    protected AddLocalVariableScreen addLocalVariableScreen() {
-        if (addLocalVariableScreen == null) {
-            addLocalVariableScreen = new AddLocalVariableScreen();
+    protected ActionBlockScreen actionBlockScreen() {
+        if (actionBlockScreen == null) {
+            actionBlockScreen = new ActionBlockScreen();
         }
-        return addLocalVariableScreen;
+        return actionBlockScreen;
+    }
+    protected ActionBlockDetailScreen actionBlockDetailScreen() {
+        if (actionBlockDetailScreen == null) {
+            actionBlockDetailScreen = new ActionBlockDetailScreen();
+        }
+        return actionBlockDetailScreen;
     }
 
 

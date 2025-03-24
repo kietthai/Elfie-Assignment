@@ -28,9 +28,7 @@ public class Marco extends BaseTest {
         logStep(nextStep(), "Select Any Application and OK");
         dialogScreen()
                 .selectOption("Application Removed")
-                .clickOnOkButton()
-                .selectOption("Any Application")
-                .clickOnOkButton();
+                .selectOption("Any Application");
 
         logStep("Verify point: ", "The Trigger Macro should show correct added values");
         marcoScreen()
@@ -51,8 +49,7 @@ public class Marco extends BaseTest {
 
         logStep(nextStep(), "Select System Log and OK");
         dialogScreen()
-                .selectOption("System Log")
-                .clickOnOkButton();
+                .selectOption("System Log");
 
         logStep("Verify point: ", "The Action Macro should show correct added values");
         marcoScreen()
@@ -73,8 +70,7 @@ public class Marco extends BaseTest {
 
         logStep(nextStep(), "Select Airplane Mode Disable and OK");
         dialogScreen()
-                .selectOption("Airplane Mode Disabled")
-                .clickOnOkButton();
+                .selectOption("Airplane Mode Disabled");
 
         logStep("Verify point: ", "The Constraints should show correct added values");
         marcoScreen()
@@ -88,7 +84,7 @@ public class Marco extends BaseTest {
                 .clickAddButton("Add Local Variable");
 
         logStep(nextStep(), "Add an Integer Variable with Name 'Test Case'");
-        addLocalVariableScreen()
+        dialogScreen()
                 .createNewVariable("Test Case", "Integer");
 
         logStep(nextStep(), "Select new added Variable, and input Value 1");

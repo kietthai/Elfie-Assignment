@@ -1,4 +1,4 @@
-package com.pages.Marco1.Marco;
+package com.pages.Marco.Marco;
 
 public class MarcoConstants {
     // Các locator cho màn hình dashboard

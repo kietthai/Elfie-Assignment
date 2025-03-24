@@ -36,8 +36,6 @@ public class DriverManager {
 //            capabilities.setCapability("appPackage", androidConfig.get("appPackage").asText());
 //            capabilities.setCapability("appActivity", androidConfig.get("appActivity").asText());
             capabilities.setCapability("automationName", androidConfig.get("automationName").asText());
-            capabilities.setCapability("noReset", androidConfig.get("noReset").asBoolean());
-            capabilities.setCapability("newCommandTimeout", androidConfig.get("newCommandTimeout").asInt());
 
             driver.set(new AndroidDriver(new URL(appiumServer), capabilities));
             System.out.print(androidConfig);

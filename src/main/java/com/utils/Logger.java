@@ -45,7 +45,7 @@ public class Logger {
     public static void logWarning(String message) {
         String log = "[WARNING] [" + getCurrentTime() + "] " + message;
         System.out.println(log);
-        testThread.get().log(Status.INFO, message);
+        testThread.get().log(Status.WARNING, message);
         if (extentTest != null) extentTest.warning(message);
     }
 }

@@ -1,6 +1,6 @@
-package com.pages.Marco1.AddAction;
+package com.pages.Marco.AddAction;
 
-import com.pages.Marco1.AddTrigger.AddTriggerScreen;
+import com.pages.Marco.AddTrigger.AddTriggerScreen;
 
 public class AddActionScreen extends AddTriggerScreen {
     public AddActionScreen chooseCategory(String category) {
