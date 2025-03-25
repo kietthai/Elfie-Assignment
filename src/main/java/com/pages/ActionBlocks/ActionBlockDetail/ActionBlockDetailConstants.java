@@ -12,4 +12,7 @@ public class ActionBlockDetailConstants {
     public static String COLLAPSE_EXPAND_BTN(String inOutVariable) {
         return String.format("com.arlosoft.macrodroid:id/%sCollapseExpandButton", inOutVariable);
     }
+
+    public static final String ACCEPT_BTN = "com.arlosoft.macrodroid:id/acceptButton";
+
 }

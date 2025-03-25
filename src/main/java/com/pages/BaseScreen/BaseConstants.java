@@ -3,6 +3,7 @@ package com.pages.BaseScreen;
 public class BaseConstants {
     public static final String VAR_VALUE_TXF = "com.arlosoft.macrodroid:id/enter_variable_dialog_value";
     public static final String ADD_LOCAL_VAR_LABEL = "com.arlosoft.macrodroid:id/localVarsLabel";
+
     public static String VAR_VALUE_RDB(String varName) {
         return String.format("com.arlosoft.macrodroid:id/%sRadio", varName);
     }
@@ -13,17 +14,17 @@ public class BaseConstants {
     }
 
     public static String ENTRY_NAME(String macroName, String entryName, String index) {
-        return String.format("(//android.widget.LinearLayout[android.widget.TextView[contains(@text,'%s')]]" +
-                        "//following-sibling::androidx.recyclerview.widget.RecyclerView" +
-                        "//android.widget.TextView[@resource-id='com.arlosoft.macrodroid:id/macro_edit_entry_name'" +
+        return String.format("(//android.widget.LinearLayout[android.widget.LinearLayout[" +
+                        "android.widget.TextView[contains(@text,'%s')]]]" +
+                        "//android.widget.TextView[@resource-id='com.arlosoft.macrodroid:id/macro_edit_entry_name' " +
                         "and @text='%s'])[%s]",
                 macroName, entryName, index);
     }
 
     public static String ENTRY_DETAIL(String macroName, String entryDetail, String index) {
-        return String.format("(//android.widget.LinearLayout[android.widget.TextView[contains(@text,'%s')]]" +
-                        "//following-sibling::androidx.recyclerview.widget.RecyclerView" +
-                        "//android.widget.TextView[@resource-id='com.arlosoft.macrodroid:id/macro_edit_entry_detail'" +
+        return String.format("(//android.widget.LinearLayout[android.widget.LinearLayout[" +
+                        "android.widget.TextView[contains(@text,'%s')]]]" +
+                        "//android.widget.TextView[@resource-id='com.arlosoft.macrodroid:id/macro_edit_entry_detail' " +
                         "and @text='%s'])[%s]",
                 macroName, entryDetail, index);
     }

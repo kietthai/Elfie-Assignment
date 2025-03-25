@@ -1,0 +1,44 @@
+{
+  "Marco_TC01": [
+    {
+      "triggerName": "Application Removed",
+      "triggerDetail": "Any Application",
+      "actionName": "Clear Log",
+      "actionDetail": "System Log",
+      "constraintsName": "Airplane Mode Disabled",
+      "varName": "TC_01",
+      "varDetail": "1"
+    },
+    {
+      "triggerName": "Application Removed",
+      "triggerDetail": "Any Application",
+      "actionName": "Clear Log",
+      "actionDetail": "System Log",
+      "constraintsName": "Airplane Mode Enabled",
+      "varName": "TC_01",
+      "varDetail": "1"
+    }
+  ],
+  "ActionBlocks_TC02": [
+    {
+      "blockTitle": "TC02_Title",
+      "blockDesc": "TC02_Desc",
+      "inputVarName": "Input_Var_TC02",
+      "inputVarValue": "True",
+      "actionName": "Clear Log",
+      "actionDetail": "System Log",
+      "outputVarName": "Output_Var_TC02",
+      "outputVarValue": "This is a testing string"
+    },
+    {
+      "blockTitle": "TC02_Title",
+      "blockDesc": "TC02_Desc",
+      "inputVarName": "Input_Var_TC02",
+      "inputVarValue": "True",
+      "actionName": "Clear Log",
+      "actionDetail": "System Log",
+      "outputVarName": "Output_Var_TC02",
+      "outputVarValue": "~!@#$%^&*()-_+=<>?/|{}[]:;\"'\\,."
+    }
+  ]
+}

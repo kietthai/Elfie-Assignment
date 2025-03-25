@@ -65,4 +65,15 @@ public class ActionBlockDetailScreen extends BaseScreen {
         }
         return this;
     }
+
+    public ActionBlockDetailScreen clickAcceptButton()
+    {
+        try{
+            ClickActions.click(ElementType.ID, ActionBlockDetailConstants.ACCEPT_BTN);
+            Logger.logInfo("Clicking [Accept] button success.");
+        } catch (Exception e){
+            Logger.logError("Fail to click [Accept] button." + e);
+        }
+        return this;
+    }
 }

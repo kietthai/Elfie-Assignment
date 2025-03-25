@@ -1,10 +1,20 @@
 import com.base.BaseTest;
+import com.google.gson.JsonObject;
+import com.utils.TestDataManager;
 import org.testng.annotations.Test;
 
 public class Marco extends BaseTest {
 
-    @Test
-    public void TC01() {
+    @Test(dataProvider = "jsonDataProvider", dataProviderClass = TestDataManager.class)
+    public void Marco_TC01(JsonObject testData) {
+        String triggerName = testData.get("triggerName").getAsString();
+        String triggerDetail = testData.get("triggerDetail").getAsString();
+        String actionName = testData.get("actionName").getAsString();
+        String actionDetail = testData.get("actionDetail").getAsString();
+        String constraintsName = testData.get("constraintsName").getAsString();
+        String varName = testData.get("varName").getAsString();
+        String varDetail = testData.get("varDetail").getAsString();
+
         logStep(startStep(), "Open application");
         onboardScreen()
                 .clickOnSkipButton()
@@ -27,14 +37,14 @@ public class Marco extends BaseTest {
         logStep(nextStep(), "Select Application Removed radio button");
         logStep(nextStep(), "Select Any Application and OK");
         dialogScreen()
-                .selectOption("Application Removed")
-                .selectOption("Any Application");
+                .selectOption(triggerName)
+                .selectOption(triggerDetail);
 
         logStep("Verify point: ", "The Trigger Macro should show correct added values");
         marcoScreen()
                 .verifyEntryDisplayed("Triggers",
-                        "Application Removed",
-                        "Any Application",
+                        triggerName,
+                        triggerDetail,
                         "1");
 
         logStep(nextStep(), "On Macro Page, tap on Action to add an action");
@@ -45,17 +55,17 @@ public class Marco extends BaseTest {
         logStep(nextStep(), "Select Clear Log");
         addActionScreen()
                 .chooseCategory("Logging")
-                .chooseItem("Clear Log");
+                .chooseItem(actionName);
 
         logStep(nextStep(), "Select System Log and OK");
         dialogScreen()
-                .selectOption("System Log");
+                .selectOption(actionDetail);
 
         logStep("Verify point: ", "The Action Macro should show correct added values");
         marcoScreen()
                 .verifyEntryDisplayed("Actions",
-                        "Clear Log",
-                        "System Log",
+                        actionName,
+                        actionDetail,
                         "1");
 
         logStep(nextStep(), "On Macro Page, tap on Constrains to add a constraint");
@@ -70,12 +80,12 @@ public class Marco extends BaseTest {
 
         logStep(nextStep(), "Select Airplane Mode Disable and OK");
         dialogScreen()
-                .selectOption("Airplane Mode Disabled");
+                .selectOption(constraintsName);
 
         logStep("Verify point: ", "The Constraints should show correct added values");
         marcoScreen()
                 .verifyEntryDisplayed("Constraints",
-                        "Airplane Mode Disabled",
+                        constraintsName,
                         "",
                         "1");
 
@@ -85,16 +95,16 @@ public class Marco extends BaseTest {
 
         logStep(nextStep(), "Add an Integer Variable with Name 'Test Case'");
         dialogScreen()
-                .createNewVariable("Test Case", "Integer");
+                .createNewVariable(varName, "Integer");
 
         logStep(nextStep(), "Select new added Variable, and input Value 1");
         marcoScreen()
-                .editLocalVariable("Test Case", "1");
+                .editLocalVariable(varName, varDetail);
         logStep("Verify point: ", "The Local Variable should show correct added values");
         marcoScreen()
                 .verifyEntryDisplayed("Local Variables",
-                        "Test Case",
-                        "1",
+                        varName,
+                        varDetail,
                         "1");
 
     }

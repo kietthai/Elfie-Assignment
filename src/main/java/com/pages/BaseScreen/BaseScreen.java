@@ -39,15 +39,15 @@ public class BaseScreen {
         try{
             List<String[]> elementsToCheck = new ArrayList<>();
             String handleEntryName = BaseConstants.ENTRY_NAME(marcoName, entryName, index)
-                    .replace("LinearLayout", marcoName.equalsIgnoreCase(
-                            "Local Variables") ? "FrameLayout" : "LinearLayout");
+                    .replace("[android.widget.LinearLayout", marcoName.equalsIgnoreCase(
+                            "Local Variables") ? "[android.widget.FrameLayout" : "[android.widget.LinearLayout");
             elementsToCheck.add(new String[]{"Entry Name", entryName, handleEntryName});
 
             // Chỉ thêm Entry Detail nếu nó không rỗng
             if (!entryDetail.isEmpty()) {
                 String handleEntryDetail = BaseConstants.ENTRY_DETAIL(marcoName, entryDetail, index)
-                        .replace("LinearLayout", marcoName.equalsIgnoreCase(
-                                "Local Variables") ? "FrameLayout" : "LinearLayout");
+                        .replace("[android.widget.LinearLayout", marcoName.equalsIgnoreCase(
+                                "Local Variables") ? "[android.widget.FrameLayout" : "[android.widget.LinearLayout");
                 elementsToCheck.add(new String[]{"Entry Detail", entryDetail, handleEntryDetail});
             }
 

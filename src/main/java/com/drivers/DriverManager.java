@@ -18,7 +18,7 @@ public class DriverManager {
     static {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            config = objectMapper.readTree(new File("src/main/resources/config.json"));
+            config = objectMapper.readTree(new File("src/main/resources/config/config.json"));
         } catch (IOException e) {
             throw new RuntimeException("Failed to load config.json", e);
         }
