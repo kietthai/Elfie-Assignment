@@ -1,7 +1,6 @@
-import com.base.BaseTest;
 import com.google.gson.JsonObject;
-import com.utils.Logger;
-import com.utils.TestDataManager;
+import utils.logging.Logger;
+import utils.testdata.TestDataManager;
 import org.testng.annotations.Test;
 
 public class ActionBlocks extends BaseTest {

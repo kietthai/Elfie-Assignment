@@ -1,10 +1,17 @@
 {
-  "appiumServer": "http://127.0.0.1:4723",
+  "appiumServer": "http://127.0.0.1:4723/wd/hub",
+  "browser": "chrome",
   "android": {
     "deviceName": "emulator-5554",
     "platformName": "Android",
     "app": "src/main/resources/app/Final_Exam_MacroDroid.apk",
     "automationName": "UiAutomator2"
+  },
+  "ios": {
+    "platformName": "iOS",
+    "deviceName": "iPhone 13",
+    "app": "/path/to/ios-app.app",
+    "automationName": "XCUITest"
   }
 }
 
