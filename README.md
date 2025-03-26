@@ -94,15 +94,12 @@ If using Maven, add the following dependencies to your pom.xml:
 
 mvn clean test
 
-mvn test -Dsurefire.suiteXmlFiles=testng.xml
+or Right-click then Run path [Assignment.xml](src/main/resources/suite/Assignment.xml)
 
 📊 Generating Test Reports with Extent Reports
 The framework integrates Extent Reports for better test reporting. After running tests, the report will be generated in the /reports directory.
 
 📂 Project Structure
-bash
-Copy
-Edit
 Elfie/
 │── logs/                     # Appium logs
 │   ├── appium.log
@@ -115,7 +112,7 @@ Elfie/
 │   │   │   ├── core/          # Driver setup & framework utilities
 │   │   │   ├── page/          # Page Object Models (POM)
 │   │   │   ├── utils/         # Helper utilities
-│   │   │   ├── BaseTest.java  # Base test setup
+│   │   │   ├── page.BaseTest.java  # Base test setup
 │   │   ├── resources/
 │   │   │   ├── app/           # Mobile app-related files
 │   │   │   ├── config/        # Config properties (e.g., capabilities)

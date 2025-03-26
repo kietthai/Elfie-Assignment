@@ -3,6 +3,7 @@ package tests;
 import com.google.gson.JsonObject;
 import core.driver.DriverManager;
 import org.testng.annotations.Test;
+import page.BaseTest;
 import utils.testdata.TestDataManager;
 
 public class Marco extends BaseTest {

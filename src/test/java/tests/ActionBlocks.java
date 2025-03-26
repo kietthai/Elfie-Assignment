@@ -2,6 +2,7 @@ package tests;
 
 import com.google.gson.JsonObject;
 import core.driver.DriverManager;
+import page.BaseTest;
 import utils.logging.Logger;
 import utils.testdata.TestDataManager;
 import org.testng.annotations.Test;
