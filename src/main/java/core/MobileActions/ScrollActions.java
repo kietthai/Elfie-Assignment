@@ -1,11 +1,12 @@
 package core.MobileActions;
 
-import core.driver.DriverFactory;
+import core.driver.DriverManager;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import utils.locator.ElementLocator;
 import utils.locator.ElementType;
 import utils.logging.Logger;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
@@ -17,7 +18,7 @@ import java.time.Duration;
 public class ScrollActions {
     public static void scrollDown(int duration) {
         Logger.logInfo("Scrolling down");
-        RemoteWebDriver driver = DriverFactory.getAndroidDriver();
+        AppiumDriver driver = DriverManager.getMobileDriver();
         int height = driver.manage().window().getSize().getHeight();
         int width = driver.manage().window().getSize().getWidth();
 
@@ -34,7 +35,7 @@ public class ScrollActions {
 
     public static void scrollToElement(ElementType type, String value) {
         Logger.logInfo("Scrolling to element: " + value);
-        RemoteWebDriver driver = DriverFactory.getAndroidDriver();
+        AppiumDriver driver = DriverManager.getMobileDriver();
 
         while (true) {
             try {

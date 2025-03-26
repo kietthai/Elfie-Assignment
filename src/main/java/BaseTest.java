@@ -4,7 +4,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import core.driver.DriverFactory;
+import core.driver.AppiumDriverManager;
+import core.driver.DriverManager;
 import page.mobile.ActionBlocks.ActionBlock.ActionBlockScreen;
 import page.mobile.ActionBlocks.ActionBlockDetail.ActionBlockDetailScreen;
 import page.mobile.BaseScreen.BaseScreen;
@@ -58,11 +59,12 @@ public class BaseTest {
     @AfterMethod
     public void tearDown(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
-            String screenshotPath = ScreenshotUtils.captureScreenshot(DriverFactory.getAndroidDriver(), result.getName());
+            String screenshotPath = ScreenshotUtils.captureScreenshot(DriverManager.getMobileDriver(), result.getName());
             ExtentTest test = ReportManager.getExtentTest();
             test.fail("Test Failed: " + result.getThrowable().getMessage()  + "\n\n"
                     , (MediaEntityBuilder.createScreenCaptureFromPath(new File(screenshotPath).getName())).build());
         }
+        AppiumDriverManager.stopAppiumService();
     }
 
     @AfterSuite

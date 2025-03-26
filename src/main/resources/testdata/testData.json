@@ -38,7 +38,7 @@
       "actionName": "Clear Log",
       "actionDetail": "System Log",
       "outputVarName": "Output_Var_TC02",
-      "outputVarValue": "~!@#$%^&*()-_+=<>?/|{}[]:;\"'\\,."
+      "outputVarValue": "~!@#$%^&*()-_+=<>?/|{}[]:;\"\\,."
     }
   ]
 }

@@ -1,7 +1,9 @@
-import com.base.BaseTest;
+package tests;
+
 import com.google.gson.JsonObject;
-import com.utils.TestDataManager;
+import core.driver.DriverManager;
 import org.testng.annotations.Test;
+import utils.testdata.TestDataManager;
 
 public class Marco extends BaseTest {
 
@@ -16,6 +18,8 @@ public class Marco extends BaseTest {
         String varDetail = testData.get("varDetail").getAsString();
 
         logStep(startStep(), "Open application");
+        DriverManager.initDriver("mobile");
+
         onboardScreen()
                 .clickOnSkipButton()
                 .clickOnBackButton();

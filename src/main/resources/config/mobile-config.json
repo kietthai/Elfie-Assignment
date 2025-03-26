@@ -1,6 +1,5 @@
 {
-  "appiumServer": "http://127.0.0.1:4723/wd/hub",
-  "browser": "chrome",
+  "platform": "android",
   "android": {
     "deviceName": "emulator-5554",
     "platformName": "Android",

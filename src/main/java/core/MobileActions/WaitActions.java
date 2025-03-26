@@ -1,6 +1,6 @@
 package core.MobileActions;
 
-import core.driver.DriverFactory;
+import core.driver.DriverManager;
 import utils.locator.ElementLocator;
 import utils.locator.ElementType;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ import static config.contants.Timeouts.IMPLICIT_WAIT;
 
 public class WaitActions {
     private static WebDriverWait getWait() {
-        return new WebDriverWait(DriverFactory.getAndroidDriver(), Duration.ofSeconds(IMPLICIT_WAIT));
+        return new WebDriverWait(DriverManager.getMobileDriver(), Duration.ofSeconds(IMPLICIT_WAIT));
     }
 
     public static WebElement waitForElementVisible(ElementType type, String value) {

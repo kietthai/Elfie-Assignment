@@ -13,12 +13,12 @@ import java.util.List;
 public class BaseScreen {
 
     public BaseScreen editLocalVariable(String varName, String varValue) {
-        try{
+        try {
             ClickActions.click(ElementType.XPATH, BaseConstants.LOCAL_VAR_NAME_TXT(varName));
             boolean eleTxfExist = ElementVerification.isElementDisplayed(ElementType.ID, BaseConstants.VAR_VALUE_TXF);
-            if (eleTxfExist){
+            if (eleTxfExist) {
                 InputActions.inputText(ElementType.ID, BaseConstants.VAR_VALUE_TXF, varValue);
-            }else {
+            } else {
                 String handleVarValue = varValue.toLowerCase();
                 ClickActions.click(ElementType.ID, BaseConstants.VAR_VALUE_RDB(handleVarValue));
             }
@@ -26,15 +26,14 @@ public class BaseScreen {
 
             Logger.logInfo(String.format("Edit local variable success with Variable Name [%s] and Variable Value [%s]",
                     varName, varValue));
-        } catch (Exception e){
+        } catch (Exception e) {
             Logger.logError(String.format("Fail to edit local variable. " + e));
         }
         return this;
     }
 
-    public BaseScreen verifyEntryDisplayed(String marcoName, String entryName, String entryDetail, String index)
-    {
-        try{
+    public BaseScreen verifyEntryDisplayed(String marcoName, String entryName, String entryDetail, String index) {
+        try {
             List<String[]> elementsToCheck = new ArrayList<>();
             String handleEntryName = BaseConstants.ENTRY_NAME(marcoName, entryName, index)
                     .replace("[android.widget.LinearLayout", marcoName.equalsIgnoreCase(
@@ -63,7 +62,7 @@ public class BaseScreen {
                 }
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             Logger.logError(String.format("Fail to verify Entry Displayed. " + e));
         }
         return this;

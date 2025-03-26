@@ -1,10 +1,10 @@
 package utils.xpath;
 
-import config.ConfigLoader;
+import config.ConfigReader;
 
 public class XPathUtils {
     public static String formatXPathForPlatform(String androidXPath) {
-        String platform = ConfigLoader.getPlatform();
+        String platform = ConfigReader.getMobileConfig().get("platform").asText();
         if ("ios".equalsIgnoreCase(platform)) {
             return androidXPath
                     .replace("android.widget.TextView", "XCUIElementTypeStaticText")

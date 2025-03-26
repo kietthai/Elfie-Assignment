@@ -8,11 +8,11 @@ import utils.logging.Logger;
 public class DialogScreen {
 
     public DialogScreen selectOption(String option) {
-        try{
+        try {
             ClickActions.click(ElementType.XPATH, DialogConstants.OPTION_CTV(option));
             ClickActions.click(ElementType.ID, DialogConstants.SYSTEM_OK_BUTTON);
             Logger.logInfo(String.format("Choosing [%s] item on Dialog.", option));
-        } catch (Exception e){
+        } catch (Exception e) {
             Logger.logError(String.format("Fail to choose [%s] item on Dialog. " + e, option));
         }
         return this;
@@ -45,7 +45,7 @@ public class DialogScreen {
             clickOnOkButton();
 
             Logger.logInfo(String.format("Create new local variable success with name [%s] and type [%s]"
-                    ,varName, varType));
+                    , varName, varType));
         } catch (Exception e) {
             Logger.logError(String.format("Fail to create new local variable. " + e));
         }
@@ -54,7 +54,7 @@ public class DialogScreen {
 
     private DialogScreen chooseVariableType(String varType) {
         ClickActions.click(ElementType.ID, DialogConstants.VARIABLE_TYPE_SPINNER);
-        ClickActions.click(ElementType.XPATH, DialogConstants.VARIABLE_TYPE_CTV(varType));
+        ClickActions.click(ElementType.XPATH, DialogConstants.OPTION_CTV(varType));
         return this;
     }
 

@@ -1,4 +1,7 @@
+package tests;
+
 import com.google.gson.JsonObject;
+import core.driver.DriverManager;
 import utils.logging.Logger;
 import utils.testdata.TestDataManager;
 import org.testng.annotations.Test;
@@ -17,6 +20,8 @@ public class ActionBlocks extends BaseTest {
         String outputVarValue = testData.get("outputVarValue").getAsString();
 
         logStep(startStep(), "Open application");
+        DriverManager.initDriver("mobile");
+
         onboardScreen()
                 .clickOnSkipButton()
                 .clickOnBackButton();
