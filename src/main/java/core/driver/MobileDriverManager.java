@@ -27,7 +27,7 @@ public class MobileDriverManager {
         capabilities.setCapability("appium:deviceName", androidConfig.get("deviceName").asText());
         capabilities.setCapability("appium:app", new File(androidConfig.get("app").asText()).getAbsolutePath());
         capabilities.setCapability("appium:automationName", androidConfig.get("automationName").asText());
-
+        capabilities.setCapability("appium:disableWindowAnimation", true);
         try {
             return new AndroidDriver(new URL("http://127.0.0.1:4723/"), capabilities);
         } catch (MalformedURLException e) {

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class ElementVerification {
 
-    public static boolean isElementDisplayed(ElementType type, String value) {
+    public static boolean isElementDisplayed(ElementType type, String value, int... timeout) {
         try {
             WebElement element = WaitActions.waitForElementVisible(type, value);
             boolean displayed = element.isDisplayed();
@@ -18,9 +18,9 @@ public class ElementVerification {
         }
     }
 
-    public static boolean isElementEnabled(ElementType type, String value) {
+    public static boolean isElementEnabled(ElementType type, String value, int... timeout) {
         try {
-            WebElement element = WaitActions.waitForElementVisible(type, value);
+            WebElement element = WaitActions.waitForElementVisible(type, value, timeout);
             boolean enabled = element.isEnabled();
             Logger.logInfo("Element [" + value + "] is enabled: " + enabled);
             return enabled;
@@ -30,9 +30,9 @@ public class ElementVerification {
         }
     }
 
-    public static boolean isElementSelected(ElementType type, String value) {
+    public static boolean isElementSelected(ElementType type, String value, int... timeout) {
         try {
-            WebElement element = WaitActions.waitForElementVisible(type, value);
+            WebElement element = WaitActions.waitForElementVisible(type, value, timeout);
             boolean selected = element.isSelected();
             Logger.logInfo("Element [" + value + "] is selected: " + selected);
             return selected;

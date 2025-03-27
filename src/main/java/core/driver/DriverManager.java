@@ -10,7 +10,7 @@ public class DriverManager {
     public static void initDriver(String type) {
         switch (type.toLowerCase()) {
             case "web":
-                webDriver.set(WebDriverManager.createWebDriver());
+                webDriver.set(WebDriverFactory.createWebDriver());
                 break;
             case "mobile":
                 mobileDriver.set(MobileDriverManager.createMobileDriver());

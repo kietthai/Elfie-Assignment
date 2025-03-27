@@ -15,7 +15,7 @@ public class BaseScreen {
     public BaseScreen editLocalVariable(String varName, String varValue) {
         try {
             ClickActions.click(ElementType.XPATH, BaseConstants.LOCAL_VAR_NAME_TXT(varName));
-            boolean eleTxfExist = ElementVerification.isElementDisplayed(ElementType.ID, BaseConstants.VAR_VALUE_TXF);
+            boolean eleTxfExist = ElementVerification.isElementDisplayed(ElementType.ID, BaseConstants.VAR_VALUE_TXF, 3);
             if (eleTxfExist) {
                 InputActions.inputText(ElementType.ID, BaseConstants.VAR_VALUE_TXF, varValue);
             } else {

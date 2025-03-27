@@ -2,6 +2,7 @@ package core.driver;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import utils.logging.Logger;
 
 import java.io.*;
 
@@ -60,7 +61,7 @@ public class AppiumDriverManager {
 
                     // Kill process
                     Runtime.getRuntime().exec("taskkill /F /PID " + pid);
-                    System.out.println("Appium server trên port " + APPIUM_PORT + " đã bị kill.");
+                    Logger.logInfo("Appium server trên port " + APPIUM_PORT + " đã bị kill.");
                 }
             }
         } catch (IOException e) {
