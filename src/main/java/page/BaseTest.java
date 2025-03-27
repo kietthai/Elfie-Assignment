@@ -7,6 +7,7 @@ import com.aventstack.extentreports.Status;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import core.driver.AppiumDriverManager;
+import core.driver.AppiumDriverManager;
 import core.driver.DriverManager;
 import page.mobile.ActionBlocks.ActionBlock.ActionBlockScreen;
 import page.mobile.ActionBlocks.ActionBlockDetail.ActionBlockDetailScreen;

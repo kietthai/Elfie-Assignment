@@ -40,6 +40,11 @@ Ensure you have the following installed:
 If using Maven, add the following dependencies to your pom.xml:
 
     <dependencies>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.9.3</version>
+        </dependency>
         <!-- Appium Java Client -->
         <dependency>
             <groupId>io.appium</groupId>
@@ -51,10 +56,22 @@ If using Maven, add the following dependencies to your pom.xml:
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.29.0</version>
+            <version>4.24.0</version>
         </dependency>
 
-        <!-- Jackson Databind-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>4.24.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.24.0</version>
+        </dependency>
+
+        <!-- Jackson Databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -82,7 +99,7 @@ If using Maven, add the following dependencies to your pom.xml:
             <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>

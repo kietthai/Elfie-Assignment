@@ -59,7 +59,7 @@ public class Marco extends BaseTest {
         logStep(nextStep(), "On Action page, tap on Logging");
         logStep(nextStep(), "Select Clear Log");
         addActionScreen()
-                .chooseCategory("Logging")
+                .chooseCategory("Logging")//
                 .chooseItem(actionName);
 
         logStep(nextStep(), "Select System Log and OK");

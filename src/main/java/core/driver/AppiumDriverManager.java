@@ -49,19 +49,21 @@ public class AppiumDriverManager {
 
     public static void killAppiumServer() {
         try {
-            // Kiểm tra xem cổng có đang bị chiếm dụng không
-            Process process = Runtime.getRuntime().exec("netstat -ano | findstr " + APPIUM_PORT);
+            // Lấy danh sách tiến trình chạy trên hệ thống
+            Process process = Runtime.getRuntime().exec("tasklist");
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.contains("LISTENING")) {
-                    // Lấy Process ID (PID) từ dòng output
+                // Kiểm tra nếu dòng nào chứa "node.exe" (Appium chạy bằng Node.js)
+                if (line.toLowerCase().contains("node.exe")) {
+                    // Tìm PID (thường nằm ở vị trí cố định)
                     String[] tokens = line.trim().split("\\s+");
-                    String pid = tokens[tokens.length - 1]; // PID là phần tử cuối
+                    String pid = tokens[1]; // PID nằm ở vị trí thứ 2
 
-                    // Kill process
+                    // Kill tiến trình
                     Runtime.getRuntime().exec("taskkill /F /PID " + pid);
-                    Logger.logInfo("Appium server trên port " + APPIUM_PORT + " đã bị kill.");
+                    System.out.println("Appium server (PID: " + pid + ") đã bị kill.");
                 }
             }
         } catch (IOException e) {
